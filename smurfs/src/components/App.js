@@ -1,5 +1,12 @@
+// DEPENDENCIES IMPORT
 import React, { Component } from "react";
+
+// FILES IMPORT
+import { SmurfContext } from '../contexts/SmurfContext';
+
+// CSS IMPORT
 import "./App.css";
+
 class App extends Component {
   render() {
     return (
