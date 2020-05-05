@@ -37,6 +37,17 @@ function Smurf() {
       .finally(() => window.location.reload());
   };
 
+  // ---- STRETCH ---- DELETE FUNCTION : 
+  function killSmurf(e, id) {
+    e.preventDefault();
+    console.log(`${id} : has died`);
+    axios
+      .delete(`http://localhost:3333/smurfs/${id}`)
+      .then((res) => console.log(res))
+      .catch((err) => console.log('delete error ', err))
+      .finally(() => window.location.reload());
+  };
+
   return (
     <div className="newSmurf">
     {/* OUR SMURFS FORM */}
@@ -65,6 +76,7 @@ function Smurf() {
           onChange={handleChanges}
         />
         <br />
+        {/* // ADD SMURF BUTTON */}
         <button type="submit">Add Smurf</button>
       </form>
 
@@ -72,7 +84,10 @@ function Smurf() {
       <div>
         {smurf.smurfs
         ? smurf.smurfs.map((smurf) => (
-            <div className="DisplaySmurf" key={smurf.id}>
+            <div className="DisplaySmurf" key={smurf.id}> 
+                {/* // DELETE SMURF BUTTON */}
+                <button onClick={(e) => killSmurf(e, smurf.id)}>Kill Smurf</button>
+                {/* // SMURF DATA */}
                 <p>Name: {smurf.name}</p>
                 <p>Age: {smurf.age}</p>
                 <p>Height: {smurf.height}</p>
