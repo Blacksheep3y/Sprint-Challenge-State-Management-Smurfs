@@ -1,3 +1,33 @@
 .App {
-  text-align: center;
+    text-align: center;
+    background-color: #282c34;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: calc(10px + 2vmin);
+    color: white;
+}
+
+.newSmurf {
+    background: #B22;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.12), 0 5px 2px rgba(0, 0, 0, 0.24);
+    width: 100%;
+    max-width: 250px;
+    padding: 10px;
+    margin: 16px auto;
+    text-align: left;
+}
+
+.DisplaySmurf {
+    background: #282c34;
+    background-image: linear-gradient(-315deg, #333 40%, #282c34 100%);
+    border: 1px solid #282c34;
+    padding: 10px 15px;
+    font-size: 16px;
+    color: #B22;
+    box-shadow: 0 2px 5px 1px rgba(0, 0, 0, 0.12), 0 2px 2px 1px rgba(0, 0, 0, 0.24);
+    transition: all 0.2 ease-in;
+    margin: 1em;
 }
