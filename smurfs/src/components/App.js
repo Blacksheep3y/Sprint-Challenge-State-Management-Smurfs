@@ -2,10 +2,12 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 
+
+// CONTEXT FILE IMPORT
+import { SmurfContext } from '../contexts/SmurfContext';
+
 // FILES IMPORT
 import Smurf from './Smurf';
-  // CONTEXT FILE
-import { SmurfContext } from '../contexts/SmurfContext';
 
 // CSS IMPORT
 import "./App.css";
@@ -30,19 +32,21 @@ function App() {
       .catch((err) => {
         console.log("error: ", err);
       });
-  }, //within a useEffect hook we must have this empty array (This tells React that your effect doesn’t depend on any values from props or state, so it never needs to re-run.)
-  []);
-
+  }, []); //within a useEffect hook we must have this empty array (This tells React that your effect doesn’t depend on any values from props or state, so it never needs to re-run.)
+  
     // lets see if our data returns correctly by doing a console.log for our 'smurfs':
     console.log("smurfs ", smurfs);
 
     return (
       <div className="App">
-        <h1>SMURFS! 2.0 W/ Redux</h1>
+        <h1>CREATE YOUR SMURF BELOW!</h1>
+        {/* <h1>SMURFS! 2.0 W/ Redux</h1>
         <div>Welcome to your state management version of Smurfs!</div>
         <div>Start inside of your `src/index.js` file!</div>
-        <div>Have fun!</div>
+        <div>Have fun!</div> */}
+        <SmurfContext.Provider value={{smurfs}}>
         <Smurf />
+        </SmurfContext.Provider>
       </div>
     );
   }
