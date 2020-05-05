@@ -7,7 +7,7 @@ function Smurf() {
   return (
     <div className="newSmurf">
       <p>
-        {smurf.lastName}, {smurf.firstName}
+        {smurf}
       </p>
     </div>
   );
