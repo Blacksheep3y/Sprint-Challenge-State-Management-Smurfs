@@ -2,6 +2,7 @@
 import React, { Component } from "react";
 
 // FILES IMPORT
+  // CONTEXT FILE
 import { SmurfContext } from '../contexts/SmurfContext';
 
 // CSS IMPORT
